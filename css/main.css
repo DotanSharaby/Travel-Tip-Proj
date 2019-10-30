@@ -1,32 +1,124 @@
+/* FONT */
+
+@font-face {
+    font-family: 'Squada-One';
+    src: url('../font/SquadaOne-Regular.ttf');
+}
+
 /* -----BASE----- */
+* {
+    font-family: Squada-One, sans-serif;
+    color: #0c093c;
+
+}
+
+img {
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
 
 body {
-    background-color: lightgray;
+    background-color: #f6d365;
+    box-sizing: border-box;
 }
+
+input, button {
+    font-size: 1.1em;
+    padding: 5px;
+    text-align: center;
+    min-width: 50px;
+    background-color: #fff;
+    border: 2px solid #3a1f5d;
+    transition: .2s;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    color: #42b883;
+}
+
 
 .app-container {
     max-width: 980px;
     margin: 0 auto;
 }
 
+/* MAIN */
+
+.main-container {
+    height: 400px;
+}
+
 /* -----MAP----- */
 
 .map-container {
-    max-width: 50%;
+    width: 50%;
+    border: 1px solid #0c093c;
+    /* border-radius: 50%; */
 }
 
 .my-loc-btn {
     cursor: pointer;
 }
+/* blue : #3a1f5d */
+/* yellow: #f6d365 */
+/* pink: #c83660 */
+/* orange: #e15249 */
+/* dark: #0c093c */
+/* green: #42b883 */
+
+/* --------Weather---------- */
+
+.weather-container {
+    background-color: #f6d365;
+    width: 40%;
+}
+
+.curr-temp {
+    display: inline;
+    padding: 7px;
+    border: 1px solid #f6d365;
+    border-radius: 50%;
+}
 
 /* -----HELPERS----- */
+
+.mb-50 {
+    margin-bottom: 50px;
+}
 
 .flex {
     display: flex;
 }
+
 .space-around {
     justify-content: space-around;
 }
+
 .space-between {
     justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.align-center {
+    text-align: center;
 }
