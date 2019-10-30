@@ -3,7 +3,7 @@
 export default {
     initMap,
     addMarker,
-    panTo
+    panTo,
 }
 
 var map;
@@ -19,10 +19,12 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 zoom: 15
             })
             console.log('Map!', map);
+            addMarker({ lat, lng }, 'init pos');
+            // addMapListeners();
         })
 }
 
-function addMarker(loc,title) {
+function addMarker(loc, title) {
     var marker = new google.maps.Marker({
         position: loc,
         map,
@@ -34,6 +36,7 @@ function addMarker(loc,title) {
 function panTo(lat, lng) {
     var laLatLng = new google.maps.LatLng(lat, lng);
     map.panTo(laLatLng);
+    map.setZoom(14);
 }
 
 function _connectGoogleApi() {
