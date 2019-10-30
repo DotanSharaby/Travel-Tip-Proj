@@ -22,11 +22,11 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
         })
 }
 
-function addMarker(loc) {
+function addMarker(loc,title) {
     var marker = new google.maps.Marker({
         position: loc,
-        map: map,
-        title: 'Hello World!'
+        map,
+        title
     });
     return marker;
 }
@@ -34,10 +34,6 @@ function addMarker(loc) {
 function panTo(lat, lng) {
     var laLatLng = new google.maps.LatLng(lat, lng);
     map.panTo(laLatLng);
-}
-
-function PanToMyLoc() {
-    
 }
 
 function _connectGoogleApi() {
