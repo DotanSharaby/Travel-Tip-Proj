@@ -2,7 +2,7 @@
 
 export default {
     getPosition,
-    API_KEY: 'a560842ebbafec0e712e1aef0039cc5b'
+    API_WEATHER_KEY: 'a560842ebbafec0e712e1aef0039cc5b'
 }
 
 function getPosition() {
