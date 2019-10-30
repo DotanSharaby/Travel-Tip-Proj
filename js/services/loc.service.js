@@ -1,7 +1,8 @@
 'use strict';
 
 export default {
-    getPosition
+    getPosition,
+    API_KEY: 'a560842ebbafec0e712e1aef0039cc5b'
 }
 
 function getPosition() {
