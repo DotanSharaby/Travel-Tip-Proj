@@ -1,5 +1,5 @@
 'use strict';
-console.log('Main!');
+
 
 import locService from './services/loc.service.js';
 import mapService from './services/map.service.js';
@@ -15,8 +15,7 @@ window.onload = () => {
                         lng: pos.coords.longitude
                     }
                     mapService.addMarker(loc, 'My Location');
-                    console.log('User position is:', pos.coords);
-                    
+
                     locService.connectToWeatherApi(loc.lat, loc.lng)
                         .then(({
                             data
@@ -33,7 +32,6 @@ window.onload = () => {
                             }
                             renderWeatherContainer(res);
                         });
-                        
                     mapService.addMarker(loc, 'My Location');
                     addListeners(loc);
                 })
@@ -42,21 +40,31 @@ window.onload = () => {
                 })
         })
         .catch(console.log('INIT MAP ERROR'));
-        
+
     // EVENT LISTENERS \\
 
     function addListeners(loc) {
         document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
-            // console.log('Aha!', ev.target);
             mapService.panTo(loc.lat, loc.lng);
         })
 
         document.querySelector('.loc-input-btn').addEventListener('click', (ev) => {
             var elLocInput = document.querySelector('.loc-input').value;
-            console.log(elLocInput);
-            mapService.panTo(loc.lat, loc.lng);
+            mapService.codeAddress(elLocInput);
+        })
+
+        document.querySelector('.clipborad-btn').addEventListener('click', (ev) => {
+            copyLocation(loc);
         })
     }
+}
+
+function copyLocation(loc) {
+    debugger;
+    var url = `github.io/index.html?lat=${loc.lat}&lng=${loc.lng}`
+
+    //  Copy the text inside the text field */
+    document.execCommand("copy");
 }
 
 function renderWeatherContainer(data) {
