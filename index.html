@@ -11,24 +11,28 @@
 
 <body>
     <main class="app-container">
-        <h1>Travel Tip</h1>
+        <header class="main-header flex space-between align-center mb-50">
+            <h1 class="inline-block">Travel Tip</h1>
 
-        <section class="location-input-container">
-            <input type="text" class="loc-input" id="address" placeholder="Enter Location">
-            <button class="loc-input-btn">GO</button>
-            <button class="my-loc-btn">My Location</button>
-        </section>
-        <section class="flex space-around">
-            <div>Location: <span class="loc-span"></span></div>
-            <button class="clipborad-btn" >Copy Location</button>
-        </section>
-        <section class="weather-container">
-            <!-- weather renders here -->
+            <section class="location-input-container">
+                <input type="text" class="loc-input" placeholder="Enter Location">
+                <button class="loc-input-btn">GO</button>
+                <button class="my-loc-btn">My Location</button>
+            </section>
+            <button class="block clipborad-btn">Copy Location</button>
+
+        </header>
+
+        <section class="main-content flex space-around">
+            <section class="weather-container align-center">
+                <!-- weather renders here -->
+            </section>
+
+            <section class="map-container">
+                <div id="map" style="width: 100%; height: 100%;"></div>
+            </section>
         </section>
 
-        <section class="map-container">
-            <div id="map" style="width: 100%; height: 400px;"></div>
-        </section>
     </main>
 
     <script src="js/lib/axios.js"></script>

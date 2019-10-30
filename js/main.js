@@ -32,6 +32,10 @@ window.onload = () => {
                             }
                             renderWeatherContainer(res);
                         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3da2641b733fe5f4e08f290cdbf570951b06dad
                     mapService.addMarker(loc, 'My Location');
                     addListeners(loc);
                 })
@@ -72,9 +76,11 @@ function renderWeatherContainer(data) {
     const container = document.querySelector('.weather-container');
     let strHtmls = `
         <h3>Weather Today</h3>
+        <p>${data.cityName}, ${data.country}<img class="align-self-center" src="https://www.countryflags.io/${data.country}/flat/24.png"></p>
         <img src="${iconUrl}"></img>
-        <p>${data.cityName}, ${data.country}<img src="https://www.countryflags.io/${data.country}/flat/24.png"></p>
-        <p style="background-color: grey; display: inline;">${data.temp} &#176;C </p><p>`;
+        <h4>${data.desc}</h4>
+
+        <p class="curr-temp">${data.temp} &#176;C </p><p>`;
     if (data.minTemp !== data.maxTemp) {
         strHtmls += `temperature from ${data.minTemp} to ${data.maxTemp} &#176;C,`;
     }
