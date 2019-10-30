@@ -32,10 +32,6 @@ window.onload = () => {
                             }
                             renderWeatherContainer(res);
                         });
-<<<<<<< HEAD
-=======
-
->>>>>>> a3da2641b733fe5f4e08f290cdbf570951b06dad
                     mapService.addMarker(loc, 'My Location');
                     addListeners(loc);
                 })
@@ -43,7 +39,6 @@ window.onload = () => {
                     console.log('err!!!', err);
                 })
         })
-        .catch(console.log('INIT MAP ERROR'));
 
     // EVENT LISTENERS \\
 
