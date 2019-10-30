@@ -4,16 +4,21 @@ console.log('Main!');
 import locService from './services/loc.service.js';
 import mapService from './services/map.service.js';
 
+
 window.onload = () => {
-    let userPos;
+    
     mapService.initMap()
         .then(() => {
             locService.getPosition()
                 .then(pos => {
-                    let loc = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+                    let loc = {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
                     mapService.addMarker(loc, 'My Location');
                     console.log('User position is:', pos.coords);
-                    userPos = pos.coords;
+                    // weather obj should destructure it to a more relevant obj
+                    console.log(locService.connectToWeatherApi(loc.lat, loc.lng));
                 })
                 .catch(err => {
                     console.log('err!!!', err);
