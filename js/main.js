@@ -21,8 +21,10 @@ window.onload = () => {
         })
         .catch(console.log('INIT MAP ERROR'));
 
+    // EVENT LISTENERS
     document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
         console.log('Aha!', ev.target);
         mapService.panTo(userPos.latitude, userPos.longitude);
     })
+
 }
