@@ -45,9 +45,24 @@ window.onload = () => {
                 })
         })
         .catch(console.log('INIT MAP ERROR'));
+        
+    // EVENT LISTENERS
+
     document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
         mapService.panTo(userPos.lat, userPos.lng);
     })
+    function addListeners(loc) {
+        document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
+            // console.log('Aha!', ev.target);
+            mapService.panTo(loc.lat, loc.lng);
+        })
+
+        document.querySelector('.loc-input-btn').addEventListener('click', (ev) => {
+            var elLocInput = document.querySelector('.loc-input').value;
+            console.log(elLocInput);
+            mapService.panTo(loc.lat, loc.lng);
+        })
+    }
 }
 
 function renderWeatherContainer(data) {
@@ -63,18 +78,4 @@ function renderWeatherContainer(data) {
     }
     strHtmls += ` wind ${data.windSpeed}km/ph</p>`;
     container.innerHTML = strHtmls;
-
-    // EVENT LISTENERS
-    function addListeners(loc) {
-        document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
-            // console.log('Aha!', ev.target);
-            mapService.panTo(loc.lat, loc.lng);
-        })
-
-        document.querySelector('.loc-input-btn').addEventListener('click', (ev) => {
-            var elLocInput = document.querySelector('.loc-input').value;
-            console.log(elLocInput);
-            mapService.panTo(loc.lat, loc.lng);
-        })
-    }
 }
