@@ -46,11 +46,8 @@ window.onload = () => {
         })
         .catch(console.log('INIT MAP ERROR'));
         
-    // EVENT LISTENERS
-
-    document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
-        mapService.panTo(userPos.lat, userPos.lng);
-    })
+    // EVENT LISTENERS \\
+    
     function addListeners(loc) {
         document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
             // console.log('Aha!', ev.target);
