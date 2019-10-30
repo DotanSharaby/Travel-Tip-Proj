@@ -10,10 +10,21 @@
 </head>
 
 <body>
-    <h1>Travel Tip</h1>
     <main>
-        <div id="map" style="width: 100%; height: 400px;"></div>
-        <i class="material-icons my-loc-btn" id="my-loc">my_location</i>
+        <h1>Travel Tip</h1>
+        <section class="location-input-container">
+            <input type="text" placeholder="Enter Location">
+            <button>GO</button>
+            <button class="my-loc-btn">My Location</button>
+        </section>
+        <section class="weather-container">
+
+        </section>
+
+        <section class="map-container">
+            <div id="map" style="width: 100%; height: 400px;"></div>
+            <!-- <i class="material-icons my-loc-btn" id="my-loc">my_location</i> -->
+        </section>
     </main>
     <script type="module" src="js/main.js"></script>
 </body>

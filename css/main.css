@@ -1,5 +1,13 @@
+/* -----BASE----- */
+
 body {
     background-color: lightgray;
+}
+
+/* -----MAP----- */
+
+.map-container {
+    max-width: 980px;
 }
 
 .my-loc-btn {
