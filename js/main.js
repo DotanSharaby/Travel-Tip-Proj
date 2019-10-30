@@ -7,7 +7,7 @@ import mapService from './services/map.service.js'
 locService.getLocs()
     .then(locs => console.log('locs', locs))
 
-
+// test by kg
 
 window.onload = () => {
     mapService.initMap()
