@@ -33,11 +33,8 @@ window.onload = () => {
                             }
                             renderWeatherContainer(res);
                         });
-                    // console.log('User position is:', pos.coords);
+                        
                     mapService.addMarker(loc, 'My Location');
-                    
-                    // weather obj should destructure it to a more relevant obj
-                    console.log(locService.connectToWeatherApi(loc.lat, loc.lng));
                     addListeners(loc);
                 })
                 .catch(err => {
@@ -47,7 +44,7 @@ window.onload = () => {
         .catch(console.log('INIT MAP ERROR'));
         
     // EVENT LISTENERS \\
-    
+
     function addListeners(loc) {
         document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
             // console.log('Aha!', ev.target);
