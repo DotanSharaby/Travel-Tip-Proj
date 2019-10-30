@@ -16,11 +16,11 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
             map = new google.maps.Map(
                 document.querySelector('#map'), {
                 center: { lat, lng },
-                zoom: 15
+                zoom: 15,
+                disableDoubleClickZoom: true
             })
             console.log('Map!', map);
             addMarker({ lat, lng }, 'init pos');
-            // addMapListeners();
         })
 }
 
@@ -30,13 +30,16 @@ function addMarker(loc, title) {
         map,
         title
     });
+    marker.addListener('dblclick', () => {
+        marker.setMap(null);
+    })
     return marker;
 }
 
 function panTo(lat, lng) {
     var laLatLng = new google.maps.LatLng(lat, lng);
     map.panTo(laLatLng);
-    map.setZoom(14);
+    map.setZoom(15);
 }
 
 function _connectGoogleApi() {
