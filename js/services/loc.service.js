@@ -5,13 +5,10 @@ export default {
 }
 
 function getPosition() {
-    console.log('Getting Pos');
-
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
     })
 }
-
 
 // const QUERY_STRING = `http://api.openweathermap.org/data/2.5/`;
 function connectToWeatherApi(lat, lng) {
