@@ -19,6 +19,7 @@ window.onload = () => {
                     console.log('User position is:', pos.coords);
                     // weather obj should destructure it to a more relevant obj
                     console.log(locService.connectToWeatherApi(loc.lat, loc.lng));
+                    
                 })
                 .catch(err => {
                     console.log('err!!!', err);
@@ -28,8 +29,11 @@ window.onload = () => {
 
     // EVENT LISTENERS
     document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
-        console.log('Aha!', ev.target);
+        // console.log('Aha!', ev.target);
         mapService.panTo(userPos.latitude, userPos.longitude);
     })
-
+    document.querySelector('.loc-input-btn').addEventListener('click', (ev) => {
+        var elLocInput = document.querySelector('.loc-input').value;
+        console.log(elLocInput);
+    })
 }

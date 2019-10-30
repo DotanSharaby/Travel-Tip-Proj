@@ -11,6 +11,9 @@ body {
 
 /* -----MAP----- */
 
+.map-container {
+    max-width: 50%;
+}
 
 .my-loc-btn {
     cursor: pointer;
