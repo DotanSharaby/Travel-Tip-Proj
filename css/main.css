@@ -11,6 +11,10 @@
   color: #0c093c;
 }
 
+body {
+    margin: 0;
+}
+
 img {
   position: relative;
   top: 5px;
