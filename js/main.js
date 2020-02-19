@@ -1,9 +1,7 @@
 'use strict';
 
-
 import locService from './services/loc.service.js';
 import mapService from './services/map.service.js';
-
 
 window.onload = () => {
     mapService.initMap()
@@ -17,9 +15,7 @@ window.onload = () => {
                     mapService.addMarker(loc, 'My Location');
 
                     locService.connectToWeatherApi(loc.lat, loc.lng)
-                        .then(({
-                            data
-                        }) => {
+                        .then(({ data }) => {
                             let res = {
                                 cityName: data.name,
                                 iconCode: data.weather[0].icon,
@@ -59,8 +55,8 @@ window.onload = () => {
 }
 
 function copyLocation(loc) {
-    debugger;
-    var url = `github.io/index.html?lat=${loc.lat}&lng=${loc.lng}`
+    // debugger;
+    var url = `github.io/index.html?lat=${loc.lat}&lng=${loc.lng}`;
 
     //  Copy the text inside the text field */
     document.execCommand("copy");

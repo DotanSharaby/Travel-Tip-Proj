@@ -1,6 +1,6 @@
 'use strict';
 
-export default {
+export default{
     initMap,
     addMarker,
     panTo,
@@ -20,7 +20,7 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 zoom: 15,
                 disableDoubleClickZoom: true
             })
-            addMarker({ lat, lng }, 'init pos');
+            addMarker({ lat, lng }, 'Shukiyaj');
         })
 }
 

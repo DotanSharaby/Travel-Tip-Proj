@@ -1,68 +1,91 @@
 /* FONT */
 
 @font-face {
-    font-family: 'Squada-One';
-    src: url('../font/SquadaOne-Regular.ttf');
+  font-family: "Squada-One";
+  src: url("../font/SquadaOne-Regular.ttf");
 }
 
 /* -----BASE----- */
 * {
-    font-family: Squada-One, sans-serif;
-    color: #0c093c;
-
+  font-family: Squada-One, sans-serif;
+  color: #0c093c;
 }
 
 img {
-    position: relative;
-    top: 5px;
-    left: 5px;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 
 body {
-    background-color: #f6d365;
-    box-sizing: border-box;
+  background-color: #f6d365;
+  box-sizing: border-box;
 }
 
-input, button {
-    font-size: 1.1em;
-    padding: 5px;
-    text-align: center;
-    min-width: 50px;
-    background-color: #fff;
-    border: 2px solid #3a1f5d;
-    transition: .2s;
+input,
+button {
+  font-size: 1.1em;
+  padding: 5px;
+  text-align: center;
+  min-width: 50px;
+  background-color: #fff;
+  border: 2px solid #3a1f5d;
+  transition: 0.2s;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button:hover {
-    color: #42b883;
-}
-
-
-.app-container {
-    max-width: 980px;
-    margin: 0 auto;
+  color: #42b883;
 }
 
 /* MAIN */
 
-.main-container {
-    height: 400px;
+.app-container {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
+.main-container {
+  height: 400px;
+}
+
+@media screen and (max-width: 700px) {
+  .app-container {
+    max-width: 450px;
+  }
+  .main-header {
+    flex-direction: column;
+    height: 150px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #f6d365;
+  }
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 /* -----MAP----- */
 
 .map-container {
-    width: 50%;
-    border: 1px solid #0c093c;
-    /* border-radius: 50%; */
+  width: 50%;
+  border: 1px solid #0c093c;
+}
+
+@media screen and (max-width: 700px) {
+  .map-container {
+    height: 450px;
+    margin-bottom: 50px;
+    width: 100%;
+  }
 }
 
 .my-loc-btn {
-    cursor: pointer;
+  cursor: pointer;
 }
 /* blue : #3a1f5d */
 /* yellow: #f6d365 */
@@ -74,51 +97,51 @@ button:hover {
 /* --------Weather---------- */
 
 .weather-container {
-    background-color: #f6d365;
-    width: 40%;
+  background-color: #f6d365;
+  width: 40%;
 }
 
 .curr-temp {
-    display: inline;
-    padding: 7px;
-    border: 1px solid #f6d365;
-    border-radius: 50%;
+  display: inline;
+  padding: 7px;
+  border: 1px solid #f6d365;
+  border-radius: 50%;
 }
 
 /* -----HELPERS----- */
 
 .mb-50 {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .space-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .justify-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .align-center {
-    align-items: center;
+  align-items: center;
 }
 
 .inline-block {
-    display: inline-block;
+  display: inline-block;
 }
 
 .block {
-    display: block;
+  display: block;
 }
 
 .align-center {
-    text-align: center;
+  text-align: center;
 }
